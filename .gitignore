@@ -177,5 +177,11 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
+### Template
+.sass-cache
+Gemfile.lock
+package-json.lock
+_site
+_drafts
 
 # End of https://www.gitignore.io/api/osx,node,webstorm
