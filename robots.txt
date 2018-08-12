@@ -1,5 +1,6 @@
 # robotstxt.org/
 
 User-agent: *
+Allow: /
 
 Sitemap: https://minjung-jeon.github.io/sitemap.xml
