@@ -163,5 +163,4 @@ reflow 횟수를 줄이면 성능이 향상됩니다.
 
 -----
 ### Reference
-- <a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf">How JavaScript works: an overview of the engine, the runtime, and the call stack</a>
-- <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ">Philip Roberts: What the heck is the event loop anyway? | JSConf EU</a>
+- <a href="https://www.sitepoint.com/10-ways-minimize-reflows-improve-performance/?utm_source=webopsweekly&utm_medium=email">10 Ways to Minimize Reflows and Improve Performance</a>
