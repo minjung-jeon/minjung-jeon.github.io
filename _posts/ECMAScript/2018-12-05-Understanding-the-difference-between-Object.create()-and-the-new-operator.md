@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[ECMAScript] [번역] Object.create() 와 new 연사자의 차이 이해"
-date: '2018-11-21 15:00:00'
+date: '2018-12-05 15:00:00'
 image: '/assets/res/js.jpeg'
 description: Object.create() 와 new 연사자
 category: 'ECMAScript'
