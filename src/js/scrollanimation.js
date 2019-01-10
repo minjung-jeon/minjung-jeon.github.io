@@ -140,10 +140,9 @@
                         self._checkTotalRendered();
 
                         if( self.options.minDuration && self.options.maxDuration ) {
-                            var randDuration = ( Math.random() * ( self.options.maxDuration - self.options.minDuration ) + self.options.minDuration ) + 's';
-                            el.style.WebkitAnimationDuration = randDuration;
-                            el.style.MozAnimationDuration = randDuration;
-                            el.style.animationDuration = randDuration;
+                            el.style.WebkitAnimationDuration = "0s";
+                            el.style.MozAnimationDuration = "0s";
+                            el.style.animationDuration = "0s";
                         }
                         
                         classie.add( el, 'animate' );
