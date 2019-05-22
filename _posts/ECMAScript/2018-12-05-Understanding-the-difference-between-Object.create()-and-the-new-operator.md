@@ -13,7 +13,7 @@ twitter_text: Object.create() 와 new 연사자
 introduction: Object.create() 와 new 연사자
 ---
 
-**원본글 : [Understanding the difference between Object.create() and the new operator]("https://medium.com/@jonathanvox01/understanding-the-difference-between-object-create-and-the-new-operator-b2a2f4749358")**
+**<a href="https://medium.com/@jonathanvox01/understanding-the-difference-between-object-create-and-the-new-operator-b2a2f4749358">Understanding the difference between Object.create() and the new operator</a>**
 
 1. 최신 JavaScript 가 아닌 코드에서 실행할 수 있습니다.
 2. 훌륭한 개발자가 되려면 모든 유형의 코드를 처리하는 방법을 배워야 합니다. 그것은 오래된 코드를 포함합니다.

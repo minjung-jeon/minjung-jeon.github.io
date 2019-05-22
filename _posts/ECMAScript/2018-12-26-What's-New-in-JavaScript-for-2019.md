@@ -13,8 +13,7 @@ twitter_text: JavaScript 2019
 introduction: JavaScript 2019
 ---
 
-**원본글 : [What's New in JavaScript for 2019]("https://developer.okta.com/blog/2019/01/22/whats-new-in-es2019/")**
-
+**<a href="https://developer.okta.com/blog/2019/01/22/whats-new-in-es2019/">What's New in JavaScript for 2019</a>**
 
 ### JavaScript 클래스에 대한 변경 사항
 
