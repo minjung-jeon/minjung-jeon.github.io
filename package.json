@@ -1,14 +1,14 @@
 {
-  "name": "thiagorossener.github.io",
+  "name": "minjung-jeon.github.io",
   "version": "1.0.0",
-  "description": "Blog pessoal de Thiago Rossener.",
+  "description": "Front-end Developer Blog",
   "main": "gulpfile.js",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thiagorossener/thiagorossener.github.io.git"
+    "url": "git+https://github.com/minjung-jeon/minjung-jeon.github.io.git"
   },
   "keywords": [
     "jekyll",
@@ -16,14 +16,13 @@
     "css",
     "js",
     "gulp",
-    "stylus"
+    "stylus",
+    "frontend",
+    "ecmascript"
   ],
-  "author": "Thiago Rossener",
+  "author": "Jeon MinJung",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thiagorossener/thiagorossener.github.io/issues"
-  },
-  "homepage": "https://github.com/thiagorossener/thiagorossener.github.io#readme",
+  "homepage": "https://minjung-jeon.github.io/",
   "devDependencies": {
     "autoprefixer-stylus": "^0.14.0",
     "browser-sync": "^2.18.13",

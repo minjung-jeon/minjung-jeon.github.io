@@ -40,6 +40,8 @@ links:
     url: /menu/ECMAScript/
   - title: React
     url: /menu/React/
+  - title: RxJS
+    url: /menu/RxJS/
 
 # Exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']
