@@ -134,7 +134,7 @@ React15 는 알려지지 않은 DOM속성을 무시하는데 사용됩니다. Re
 <div mycustomattribute="something" />
 ```
 
-React15 를 사용하 DOM에 빈 div를 랜더링 합니다.
+React15 를 사용하여 DOM에 빈 div를 랜더링 합니다.
 
 ```jsx
 // React 15 output:
