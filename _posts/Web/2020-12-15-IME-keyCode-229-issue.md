@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "[Web] IME keyCode 229 Issue(Chrome+한글, Android Mobile 환경)"
-date: '2020-12-12 15:00:00'
-image: '/assets/res/web.jpeg'
+date: '2020-12-15 15:00:00'
+image: '/assets/res/web.png'
 description: IME keyCode 229 Issue
 category: 'Web'
 tags:
