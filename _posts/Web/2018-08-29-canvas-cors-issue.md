@@ -10,6 +10,7 @@ tags:
 - frontend
 - web
 - canvas
+- cors
 twitter_text: Canvas CORS Issue
 introduction: Canvas Web CORS(cross-origin resource sharing) Issue
 ---

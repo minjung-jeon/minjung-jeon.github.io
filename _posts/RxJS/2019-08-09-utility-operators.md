@@ -10,6 +10,7 @@ tags:
 - ECMAScript
 - frontend
 - RxJS
+- Operators
 twitter_text: tap, delay, delayWhen, dematerialize, materialize, observeOn, subscribeOn, timeInterval, timestamp, timeout, timeoutWith, toArray
 introduction: tap, delay, delayWhen, dematerialize, materialize, observeOn, subscribeOn, timeInterval, timestamp, timeout, timeoutWith, toArray
 ---

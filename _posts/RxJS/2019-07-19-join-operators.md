@@ -10,6 +10,7 @@ tags:
 - ECMAScript
 - frontend
 - RxJS
+- Operators
 twitter_text: combineAll, concatAll, exhaust, mergeAll, startWith, withLatestFrom
 introduction: combineAll, concatAll, exhaust, mergeAll, startWith, withLatestFrom
 ---

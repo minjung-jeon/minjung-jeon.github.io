@@ -10,6 +10,9 @@ tags:
 - ECMAScript
 - frontend
 - RxJS
+- Observables
+- Observers
+- Operators
 twitter_text: RxJS - Observables, Observers, Operators
 introduction: RxJS - Observables, Observers, Operators
 ---

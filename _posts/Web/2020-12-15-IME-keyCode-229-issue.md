@@ -10,8 +10,8 @@ tags:
 - frontend
 - react
 - web
-- IME
-- keyCode 229
+- keyboardEvent
+- InputEvent
 twitter_text: IME keyCode 229 Issue
 introduction: IME keyCode 229 Issue
 ---

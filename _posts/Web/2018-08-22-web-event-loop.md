@@ -9,6 +9,7 @@ tags:
 - javascript
 - frontend
 - web
+- event loop
 twitter_text: Event Loop
 introduction: Event Loop
 ---

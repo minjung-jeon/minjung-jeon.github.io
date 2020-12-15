@@ -9,6 +9,8 @@ tags:
 - javascript
 - frontend
 - web
+- performance
+- reflow
 twitter_text: Reflow 최소화와 성능 향상의 10가지 방법
 introduction: Reflow 최소화와 성능 향상의 10가지 방법
 ---

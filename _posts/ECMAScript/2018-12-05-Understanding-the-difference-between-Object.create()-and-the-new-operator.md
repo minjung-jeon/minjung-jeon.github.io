@@ -9,6 +9,7 @@ tags:
 - javascript
 - ECMAScript
 - frontend
+- Object
 twitter_text: Object.create() 와 new 연사자
 introduction: Object.create() 와 new 연사자
 ---
