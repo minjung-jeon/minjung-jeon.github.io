@@ -3,7 +3,8 @@ layout: post
 title: "[RxJS] Operators 2 - Join Operators"
 date: '2019-07-19 15:00:00'
 image: '/assets/res/rxjs.png'
-description: combineAll, concatAll, exhaust, mergeAll, startWith, withLatestFrom
+subtitle: combineAll, concatAll, exhaust, mergeAll, startWith, withLatestFrom
+description: RxJS Operators - Join Operators
 category: 'RxJS'
 tags:
 - javascript
@@ -11,8 +12,7 @@ tags:
 - frontend
 - RxJS
 - Operators
-twitter_text: combineAll, concatAll, exhaust, mergeAll, startWith, withLatestFrom
-introduction: combineAll, concatAll, exhaust, mergeAll, startWith, withLatestFrom
+author: minjnug
 ---
 
 ## combineAll

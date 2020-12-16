@@ -12,8 +12,8 @@ tags:
 - web
 - keyboardEvent
 - InputEvent
-twitter_text: IME keyCode 229 Issue
-introduction: IME keyCode 229 Issue
+paginate: false
+author: minjnug
 ---
 
 

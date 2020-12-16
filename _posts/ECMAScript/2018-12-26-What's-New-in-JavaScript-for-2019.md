@@ -9,8 +9,7 @@ tags:
 - javascript
 - ECMAScript
 - frontend
-twitter_text: JavaScript 2019
-introduction: JavaScript 2019
+author: minjnug
 ---
 
 **<a href="https://developer.okta.com/blog/2019/01/22/whats-new-in-es2019/">What's New in JavaScript for 2019</a>**

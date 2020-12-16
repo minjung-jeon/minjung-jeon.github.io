@@ -10,8 +10,7 @@ tags:
 - ECMAScript
 - frontend
 - Object
-twitter_text: Object.create() 와 new 연사자
-introduction: Object.create() 와 new 연사자
+author: minjnug
 ---
 
 **<a href="https://medium.com/@jonathanvox01/understanding-the-difference-between-object-create-and-the-new-operator-b2a2f4749358">Understanding the difference between Object.create() and the new operator</a>**

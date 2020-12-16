@@ -13,8 +13,7 @@ tags:
 - Observables
 - Observers
 - Operators
-twitter_text: RxJS - Observables, Observers, Operators
-introduction: RxJS - Observables, Observers, Operators
+author: minjnug
 ---
 
 RxJS는 Observables를 사용하여 비동기식 또는 callback 기반의 코드를 보다 쉽게 작성할 수 있도록 도와주는 Reactive Programming 라이브러리입니다.

@@ -3,7 +3,8 @@ layout: post
 title: "[RxJS] Operators 3 - Utility Operators"
 date: '2019-08-09 15:00:00'
 image: '/assets/res/rxjs.png'
-description: tap, delay, delayWhen, dematerialize, materialize, observeOn, subscribeOn, timeInterval, timestamp, timeout, timeoutWith, toArray
+subtitle: tap, delay, delayWhen, dematerialize, materialize, observeOn, subscribeOn, timeInterval, timestamp, timeout, timeoutWith, toArray
+description: RxJS Operators - Utility Operators
 category: 'RxJS'
 tags:
 - javascript
@@ -11,8 +12,7 @@ tags:
 - frontend
 - RxJS
 - Operators
-twitter_text: tap, delay, delayWhen, dematerialize, materialize, observeOn, subscribeOn, timeInterval, timestamp, timeout, timeoutWith, toArray
-introduction: tap, delay, delayWhen, dematerialize, materialize, observeOn, subscribeOn, timeInterval, timestamp, timeout, timeoutWith, toArray
+author: minjnug
 ---
 
 ## tap

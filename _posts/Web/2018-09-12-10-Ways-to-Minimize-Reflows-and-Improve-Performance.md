@@ -11,8 +11,7 @@ tags:
 - web
 - performance
 - reflow
-twitter_text: Reflow 최소화와 성능 향상의 10가지 방법
-introduction: Reflow 최소화와 성능 향상의 10가지 방법
+author: minjnug
 ---
 
 2MB 성능에 도달하는 웹 페이지에도 불구하고 hot topic 이 남아 있습니다. 어플리케이션이 더 매끄러울수록 사용자 환경이 개선되고 전환율이 높아집니다.

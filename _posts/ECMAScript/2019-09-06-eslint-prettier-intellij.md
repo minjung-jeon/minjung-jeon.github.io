@@ -12,8 +12,7 @@ tags:
 - eslint
 - prettier
 - IntelliJ
-twitter_text: Eslint & Prettier(저장시 자동 reformat)
-introduction: Eslint & Prettier(저장시 자동 reformat)
+author: minjnug
 ---
 
 

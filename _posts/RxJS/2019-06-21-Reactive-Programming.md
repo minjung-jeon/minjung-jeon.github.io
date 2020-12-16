@@ -10,8 +10,7 @@ tags:
 - ECMAScript
 - frontend
 - RxJS
-twitter_text: Reactive Programming
-introduction: Reactive Programming
+author: minjnug
 ---
 
    - Reactive programming is a declarative programming paradigm concerned with data streams and the propagation of change.

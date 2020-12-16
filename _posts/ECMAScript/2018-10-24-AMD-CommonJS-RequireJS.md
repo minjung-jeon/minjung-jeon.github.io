@@ -11,8 +11,7 @@ tags:
 - frontend
 - AMD
 - CommonJS
-twitter_text: AMD, CommonJS
-introduction: AMD, CommonJS
+author: minjnug
 ---
 
 자바스크립트는 `모듈 사용의 표준이 존재하지 않는다` 는 다른 스크립트 언어 계열과 차이점이 존재합니다.

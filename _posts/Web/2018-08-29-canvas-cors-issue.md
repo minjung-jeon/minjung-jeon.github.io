@@ -11,8 +11,7 @@ tags:
 - web
 - canvas
 - cors
-twitter_text: Canvas CORS Issue
-introduction: Canvas Web CORS(cross-origin resource sharing) Issue
+author: minjnug
 ---
 
 ### Canvas 를 사용하며 발생한 CORS 이슈

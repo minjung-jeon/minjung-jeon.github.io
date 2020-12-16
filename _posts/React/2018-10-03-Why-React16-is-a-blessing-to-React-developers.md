@@ -8,8 +8,7 @@ category: 'React'
 tags:
 - react
 - frontend
-twitter_text: React16 주요 변경 사항
-introduction: React16 주요 변경 사항
+author: minjnug
 ---
 
 **<a href="https://medium.freecodecamp.org/why-react16-is-a-blessing-to-react-developers-31433bfc210a">Why React16 is a blessing to React developers</a>**

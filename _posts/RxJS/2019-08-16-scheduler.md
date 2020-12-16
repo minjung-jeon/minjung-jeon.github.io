@@ -11,8 +11,7 @@ tags:
 - frontend
 - RxJS
 - Scheduler
-twitter_text: RxJS Scheduler 멀티스레딩
-introduction: RxJS Scheduler 멀티스레딩
+author: minjnug
 ---
 
 ## Scheduler
