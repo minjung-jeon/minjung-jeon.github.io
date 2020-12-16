@@ -110,15 +110,17 @@ EOT
 initpost_content() {
 
 echo "---"
+echo "date: ${CURRENT_DATE} ${TIME}"
 echo "layout: post"
 echo "title: \"${POST_TITLE}\""
-echo "date: ${CURRENT_DATE} ${TIME}"
-echo "image: ''"
+echo "subtitle:"
 echo "description:"
-echo "category: ''"
+echo "image:"
+echo "optimized_image:"
+echo "category:"
 echo "tags:"
-echo "twitter_text:"
-echo "introduction:"
+echo "author:"
+echo "paginate: false"
 echo "---"
 
 }

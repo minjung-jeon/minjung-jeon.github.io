@@ -1,0 +1,17 @@
+name: MINJUNG
+title: MINJUNG
+email: minjung.sw@gmail.com
+description: Front-end Blog
+show_hero: false
+disqus_username: minjungs-blog
+menu:
+  - title: Home
+    url: /
+  - title: Web
+    url: /menu/Web/
+  - title: ECMAScript
+    url: /menu/ECMAScript/
+  - title: React
+    url: /menu/React/
+  - title: RxJS
+    url: /menu/RxJS/

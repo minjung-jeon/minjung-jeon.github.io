@@ -1,0 +1,5 @@
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://minjung-jeon.github.io"
+google_analytics: "G-3CD4BC39XL"
+language: "en"
+categories_folder: category

@@ -1,5 +1,9 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'rouge'
-gem 'jekyll'
-gem 'jemoji'
+gem "kramdown"
+gem "kramdown-parser-gfm"
+gem "rouge"
+gem "jekyll"
+gem "jekyll-paginate"
+gem "jekyll-paginate-content"
+gem "json"

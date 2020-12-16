@@ -1,37 +1,11 @@
 # Site Settings
+name: MINJUNG
 title: MINJUNG
 email: minjung.sw@gmail.com
 description: Front-end Blog
-baseurl: ""
-url: "https://minjung-jeon.github.io"
-google_analytics: "UA-XXXXXXXX-X"
-
-# User Settings
-username: MINJUNG
-user_description: Front-end Developer
+show_hero: false
 disqus_username: minjungs-blog
-
-# Social Media
-# Remove the item if you don't need it
-github_username: minjung-jeon
-#facebook_username: facebook_username
-#twitter_username: twitter_username
-#instagram_username: instagram_username
-#linkedin_username: linkedin_username
-#medium_username: medium_username
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-permalink: /:title/
-
-# Plugins
-plugins:
-  - jemoji
-
-# Links to include in menu navigation
-# For external links add external: true
-links:
+menu:
   - title: Home
     url: /
   - title: Web
@@ -43,5 +17,116 @@ links:
   - title: RxJS
     url: /menu/RxJS/
 
+
+# Social Media Settings
+# Remove the item if you don't need it
+github_username: minjung-jeon
+
+
+# Posts Settings
+show_time_bar: true
+show_modal_on_exit: false
+show_modal_on_finish_post: false
+two_columns_layout: true
+
+
+# Advanced Settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://minjung-jeon.github.io"
+google_analytics: "G-3CD4BC39XL"
+language: "en"
+categories_folder: category
+
+
+# translations Settings
+translations:
+  text:
+    new_post: "New Post"
+    see_also: "See also"
+    search: "Search"
+    author: "Author"
+    share: "Share"
+    comments: "Comments"
+  button:
+    read_now: "Read Now"
+    share_on_twitter: "Share on Twitter"
+    share_on_facebook: "Share on Facebook"
+  pagination:
+    page: "Page"
+    of: "of"
+    next_page: "Next Page"
+    next_post: "Previous Page"
+  recommendation:
+    text: "Why don't you read something next?"
+    back_btn: "Go back to top"
+  error_404:
+    title: "Page not found :("
+    message: "I'm sorry. We couldn't find the page you are looking for."
+    image_alt: "404 - Page not found"
+  contact:
+    title: "Talk to me"
+    subject: "New contact!"
+    submit_btn: "Send"
+    placeholders:
+      name: "minjung"
+      email: "minjung.sw@gmail.com"
+    errors:
+      locale: "en"
+      empty_name: "Name is required"
+      empty_email: "Email is required"
+      invalid_email: "Email is invalid"
+      empty_message: "Message is required"
+    after_send:
+      title: "Message sent!"
+      message: "Thank you for sending me a message. I'm going to answer ASAP."
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+collections:
+  authors:
+    output: true
+paginate_path: "/page/:num/"
+show_get_theme_btn: false
+use_logo: false
+
+# Content paginator
+paginate_content:
+  enabled: true
+  debug: false
+  collections:
+    - posts
+  auto: false
+  separator: "--page-break--"
+  permalink: "/:num/"
+  seo_canonical: true
+  properties:
+    part:
+      is_generated: true
+    last:
+      is_generated: true
+    single:
+      is_generated: true
+
+# SASS
+sass:
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-paginate-content
+
 # Exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules']
+exclude: [
+  'package.json',
+  'package-lock.json',
+  'src',
+  'node_modules',
+  'initpost.sh',
+  'Gemfile',
+  'Gemfile.lock',
+  'gulpfile.js',
+  'README.md'
+]

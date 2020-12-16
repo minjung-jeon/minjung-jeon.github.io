@@ -1,113 +1,217 @@
-var env       = require('minimist')(process.argv.slice(2)),
-  gulp        = require('gulp'),
-  plumber     = require('gulp-plumber'),
-  browserSync = require('browser-sync').create(),
-  stylus      = require('gulp-stylus'),
-  uglify      = require('gulp-uglify'),
-  concat      = require('gulp-concat'),
-  jeet        = require('jeet'),
-  rupture     = require('rupture'),
-  koutoSwiss  = require('kouto-swiss'),
-  prefixer    = require('autoprefixer-stylus'),
-  imagemin    = require('gulp-imagemin'),
-  cp          = require('child_process');
-
-var messages = {
-  jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
-};
-
-var paths ={
-  styles: {
-    src: 'src/styl/**/*.styl',
-    dest: 'assets/css/'
-  },
-  scripts: {
-    src: 'src/js/**/*.js',
-    dest: 'assets/js/'
-  },
-  images: {
-    src: 'src/img/**/*.{jpg,png,gif}',
-    dset: 'assets/img/'
-  }
-};
+let gulp         = require('gulp'),
+    concat       = require('gulp-concat'),
+    imagemin     = require('gulp-imagemin'),
+    include      = require('gulp-include'),
+    plumber      = require('gulp-plumber'),
+    rename       = require('gulp-rename'),
+    sourcemaps   = require('gulp-sourcemaps'),
+    uglify       = require('gulp-uglify'),
+    yaml         = require('gulp-yaml'),
+    browserSync  = require('browser-sync'),
+    cp           = require('child_process'),
+    del          = require('del'),
+    fs           = require('fs'),
+    jsonSass     = require('json-sass'),
+    source       = require('vinyl-source-stream');
 
 /**
- * Build the Jekyll Site
+ * Notify
+ * 
+ * Show a notification in the browser's corner.
+ * 
+ * @param {*} message 
  */
-gulp.task('jekyll-build', function (done) {
-    browserSync.notify(messages.jekyllBuild);
-    return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'})
-        .on('close', done);
-});
+function notify(message) {
+  browserSync.notify(message);
+}
 
 /**
- * Rebuild Jekyll & do page reload
+ * Config Task
+ * 
+ * Build the main YAML config file.
  */
-gulp.task('jekyll-rebuild', gulp.series(['jekyll-build']), function () {
-  browserSync.reload();
-});
+function config() {
+  return gulp.src('src/yml/_config.yml')
+    .pipe(include())
+    .on('error', console.error)
+    .pipe(gulp.dest('./'));
+}
 
 /**
- * Wait for jekyll-build, then launch the Server
+ * Jekyll Task
+ * 
+ * Build the Jekyll Site.
+ * 
+ * @param {*} done 
  */
-gulp.task('browser-sync', function(done) {
-  browserSync.init({
+function jekyll(done) {
+  notify('Building Jekyll...');
+  let bundle = process.platform === "win32" ? "bundle.bat" : "bundle";
+  return cp
+    .spawn(bundle, ['exec', 'jekyll build'], { stdio: 'inherit' })
+    .on('close', done);
+}
+
+/**
+ * Server Task
+ * 
+ * Launch server using BrowserSync.
+ * 
+ * @param {*} done 
+ */
+function server(done) {
+  browserSync({
     server: {
       baseDir: '_site'
     }
   });
   done();
-});
+}
 
 /**
- * Stylus task
+ * Reload Task
+ * 
+ * Reload page with BrowserSync.
+ * 
+ * @param {*} done 
  */
-gulp.task('stylus', function(done){
-    gulp.src('src/styl/main.styl', { since: gulp.lastRun('stylus') })
-    .pipe(plumber())
-    .pipe(stylus({
-      use:[koutoSwiss(), prefixer(), jeet(), rupture()],
-      compress: true
+function reload(done) {
+  notify('Reloading...');
+  browserSync.reload();
+  done();
+}
+
+/**
+ * Theme Tasks
+ * 
+ * These three tasks are responsible for:
+ * 1. Converting src/yml/theme.yml to src/tmp/theme.json
+ * 2. Converting src/tmp/theme.json to _sass/_theme.scss
+ * 3. Deleting src/tmp
+ * 
+ * With these tasks we can apply the theme colors to SVGs and CSS elements using
+ * just the src/yml/theme.yml file.
+ */
+
+function yamlTheme() {
+  return gulp.src('src/yml/theme.yml')
+    .pipe(yaml({ schema: 'DEFAULT_SAFE_SCHEMA' }))
+    .pipe(gulp.dest('src/tmp/'));
+}
+
+function jsonTheme() {
+  return fs.createReadStream('src/tmp/theme.json')
+    .pipe(jsonSass({
+      prefix: '$theme: ',
     }))
-    .pipe(gulp.dest('_site/assets/css/'))
-    .pipe(browserSync.reload({stream:true}))
-    .pipe(gulp.dest(paths.styles.dest));
-    done();
-});
+    .pipe(source('src/tmp/theme.json'))
+    .pipe(rename('_sass/_theme.scss'))
+    .pipe(gulp.dest('./'));
+}
+
+function cleanTheme() {
+  return del(['src/tmp']);
+}
+
+const theme = gulp.series(yamlTheme, jsonTheme, cleanTheme);
 
 /**
- * Javascript Task
+ * Main JS Task
+ * 
+ * All regular .js files are collected, minified and concatonated into one
+ * single scripts.min.js file (and sourcemap)
  */
-gulp.task('js', function(){
-  return gulp.src((env.p) ? paths.scripts.src : [paths.scripts.src, '!src/js/analytics.js'], { since: gulp.lastRun('js'), sourcemaps: true })
-    .pipe(plumber())
-    .pipe(concat('main.js'))
+function mainJs() {
+  notify('Building JS files...');
+  return gulp.src('src/js/main/**/*.js')
+    .pipe(sourcemaps.init())
     .pipe(uglify())
-    .pipe(gulp.dest(paths.scripts.dest));
-});
+    .pipe(concat('scripts.min.js'))
+    .pipe(plumber())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('_site/assets/js/'))
+    .pipe(browserSync.reload({ stream: true }))
+    .pipe(gulp.dest('assets/js'));
+}
 
 /**
- * Imagemin Task
+ * Preview JS Task
+ * 
+ * Copy preview JS files to the assets folder.
  */
-gulp.task('imagemin', function() {
-  return gulp.src(paths.images.src)
+function previewJs() {
+  notify('Copying preview files...');
+  return gulp.src('src/js/preview/**/*.*')
+    .pipe(gulp.dest('assets/js/'));
+}
+
+/**
+ * JavaScript Task
+ * 
+ * Run all the JS related tasks.
+ */
+const js = gulp.parallel(mainJs, previewJs);
+
+/**
+ * Images Task
+ * 
+ * All images are optimized and copied to assets folder.
+ */
+function images() {
+  notify('Copying image files...');
+  return gulp.src('src/img/**/*.{jpg,png,gif,svg}')
     .pipe(plumber())
     .pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))
-    .pipe(gulp.dest(paths.images.dest));
-});
+    .pipe(gulp.dest('assets/img/'));
+}
 
 /**
- * Watch stylus files for changes & recompile
- * Watch html/md files, run jekyll & reload BrowserSync
+ * Watch Task
+ * 
+ * Watch files to run proper tasks.
  */
-gulp.task('watch', function () {
-  gulp.watch(paths.styles.src, gulp.series('stylus'));
-  gulp.watch(paths.scripts.src, gulp.series('js'));
-  gulp.watch(['index.html', '_includes/**/*.*', '_layouts/**/*.*', '_posts/**/*.*'], gulp.series('jekyll-rebuild'));
-});
+function watch() {
+  // Watch YAML files for changes & recompile
+  gulp.watch(['src/yml/*.yml', '!src/yml/theme.yml'], gulp.series(config, jekyll, reload));
+
+  // Watch theme file for changes, rebuild styles & recompile
+  gulp.watch(['src/yml/theme.yml'], gulp.series(theme, config, jekyll, reload));
+
+  // Watch SASS files for changes & rebuild styles
+  gulp.watch(['_sass/**/*.scss'], gulp.series(jekyll, reload));
+
+  // Watch JS files for changes & recompile
+  gulp.watch('src/js/main/**/*.js', mainJs);
+
+  // Watch preview JS files for changes, copy files & reload
+  gulp.watch('src/js/preview/**/*.js', gulp.series(previewJs, reload));
+
+  // Watch images for changes, optimize & recompile
+  gulp.watch('src/img/**/*', gulp.series(images, config, jekyll, reload));
+
+  // Watch html/md files, rebuild config, run Jekyll & reload BrowserSync
+  gulp.watch(['*.html', '_includes/*.html', '_layouts/*.html', '_posts/*', '_authors/*', 'pages/*', 'category/*'], gulp.series(config, jekyll, reload));
+}
 
 /**
- * Default task, running just `gulp` will compile the stylus,
- * compile the jekyll site, launch BrowserSync & watch files.
+ * Default Task
+ *
+ * Running just `gulp` will:
+ * - Compile the theme, SASS and JavaScript files
+ * - Optimize and copy images to its folder
+ * - Build the config file
+ * - Compile the Jekyll site
+ * - Launch BrowserSync & watch files
  */
-gulp.task('default', gulp.series(['js', 'stylus', 'browser-sync', 'watch']));
+exports.default = gulp.series(gulp.parallel(js, theme, images), config, jekyll, gulp.parallel(server, watch));
+
+/**
+ * Build Task
+ * 
+ * Running just `gulp build` will:
+ * - Compile the theme, SASS and JavaScript files
+ * - Optimize and copy images to its folder
+ * - Build the config file
+ * - Compile the Jekyll site
+ */
+exports.build = gulp.series(gulp.parallel(js, theme, images), config, jekyll);
