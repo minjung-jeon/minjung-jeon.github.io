@@ -63,9 +63,11 @@ Composition 되는 동안 keydown 이벤트의 keyCode 값은 229가 나타나�
 <div id="test_area">
 <input type="text" id="testing" name="testname">
 <p style="display:inline-block">keydown keyCode: </p><p style="display:inline-block" id="keydown_keyCode"></p>
+<div></div>
 <p style="display:inline-block">keydown isComposing: </p><p style="display:inline-block" id="keydown_isComposing"></p>
 <div></div>
 <p style="display:inline-block">keyup keyCode: </p><p style="display:inline-block" id="keyup_keyCode"></p>
+<div></div>
 <p style="display:inline-block">keyup isComposing: </p><p style="display:inline-block" id="keyup_isComposing"></p>
 </div>
 <script>
