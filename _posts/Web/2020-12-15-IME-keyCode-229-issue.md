@@ -8,7 +8,6 @@ category: 'Web'
 tags:
 - javascript
 - frontend
-- react
 - web
 - keyboardEvent
 - InputEvent
