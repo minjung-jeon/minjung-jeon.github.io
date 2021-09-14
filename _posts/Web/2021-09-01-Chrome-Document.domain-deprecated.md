@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Web] Document.domain Deprecated"
+title: "[Web] Chrome Document.domain Deprecated"
 date: '2021-09-01 15:00:00'
 image: '/assets/res/web.png'
 category: 'Web'
@@ -34,7 +34,7 @@ author: minjnug
 
 ### Deprecated
 
-document.domain은 이제 Setter 가 되지 않는다. 이는 동일 출처 정책이 제공하는 보안 보호를 악화시키고, 브라우저의 출처 모델을 복잡하게 만들어 상호 운용성 문제와 보안 버그를 일으킨다.
+Chrome 에서 document.domain은 이제 Setter 가 되지 않는다. 이는 동일 출처 정책이 제공하는 보안 보호를 악화시키고, 브라우저의 출처 모델을 복잡하게 만들어 상호 운용성 문제와 보안 버그를 일으킨다.
 
 document.domain 설정으로 모든 하위 도메인에서 페이지의 DOM에 대한 전체 액세스를 허용할 수 있으며, 이는 위험할 수 있다. 또한 원본에서 포트 구성 요소를 제거하므로, 이제 포트가 다른 동일한 IP 주소 또는 동일한 호스트 구성 요소를 가진 다른 페이지에서 액세스할 수 있게된다.
 
