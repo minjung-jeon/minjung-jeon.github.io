@@ -431,6 +431,7 @@
 /* Time bar */
 
 .time-bar {
+  z-index: 1;
   position: fixed;
   left: 0;
   right: 0;
@@ -490,6 +491,7 @@
 
 .recommendation {
   @include mainFont(400);
+  z-index: 1;
   position: fixed;
   left: 0;
   right: 0;
