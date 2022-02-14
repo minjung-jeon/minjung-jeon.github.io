@@ -99,7 +99,7 @@ Class Component의 특징 :
 - JSX 를 반환하기 위해 render() 함수가 있어야한다.
 
 
-<!-- [Props 와 State 관련 글](./2022-02-16-React-props-state.md) -->
+[Props 와 State 관련 글](../React-props-state)
 
 
 -----
