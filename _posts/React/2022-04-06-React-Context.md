@@ -134,7 +134,7 @@ class ThemedButton extends React.Component {
     let theme = this.context;
     return (
       <button
-        style={{backgroundColor: theme.background}}
+        style={backgroundColor: theme.background}
       />
     );
   }
@@ -150,7 +150,7 @@ function ThemedButton() {
     <ThemeContext.Consumer>
       {theme => (
         <button
-          style={{backgroundColor: theme.background}}
+          style={backgroundColor: theme.background}
         />
       )}
     </ThemeContext.Consumer>
@@ -166,7 +166,7 @@ import ThemeContext from "./ThemeContext";
 
 function ThemedButton() {
   const theme = useContext(ThemeContext);
-  return (<button style={{backgroundColor: theme.background}} />);
+  return (<button style={backgroundColor: theme.background} />);
 }
 ```
 
@@ -237,7 +237,7 @@ function ThemeTogglerButton() {
       {({theme, toggleTheme}) => (
         <button
           onClick={toggleTheme}
-          style={{backgroundColor: theme.background}}>
+          style={backgroundColor: theme.background}>
           Toggle Theme
         </button>
       )}
